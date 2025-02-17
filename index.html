@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Kumar Mishra - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Modern Dark Theme */
+        :root {
+            --primary: #00ff88;
+            --secondary: #03dac6;
+            --dark: #121212;
+            --darker: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--darker);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(18, 18, 18, 0.95);
+            padding: 1.5rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 2rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 100px auto 50px;
+            padding: 0 20px;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .profile-pic {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            margin: 2rem auto;
+            transition: transform 0.3s;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .profile-info p {
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+            color: #cccccc;
+        }
+
+        /* Sections */
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+
+        /* Projects */
+        .project-card {
+            background: var(--dark);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 30px;
+            margin: 1rem 0;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn i {
+            margin-left: 10px;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Social Icons */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-icon {
+            font-size: 2rem;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background: var(--dark);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Stats */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stats-container img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 80px;
+            }
+            
+            nav a {
+                margin: 0 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .profile-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container" id="home">
+        <section class="profile-section">
+            <h1>Aditya Kumar Mishra</h1>
+            <img src="1.jpg" alt="Profile Picture" class="profile-pic">
+            <div class="profile-info">
+                <p>Age: 16 Years</p>
+                <p>Class: 11th</p>
+                <p>School: I.G.S.S. College</p>
+                <p>Address: Gopalganj, Bihar</p>
+            </div>
+            <a href="https://drive.google.com/file/d/1wg5lbPvc6jndVeLk9e1OJ4CLa0RPTjRP/view?usp=sharing" class="btn">
+                Download Resume <i class="fas fa-download"></i>
+            </a>
+        </section>
+
+        <section class="section" id="about">
+            <h2>About Me</h2>
+            <p>A passionate developer with expertise in video editing, web development, and digital marketing. Currently exploring machine learning and AI applications.</p>
+            <!-- Add more content -->
+        </section>
+
+        <section class="section" id="projects">
+            <h2>Featured Projects</h2>
+            <div class="project-card">
+                <h3>Daily Water Intake Tracker</h3>
+                <p>AI-powered hydration monitoring system</p>
+                <a href="#" class="btn">View on GitHub <i class="fab fa-github"></i></a>
+            </div>
+            <!-- Add more projects -->
+        </section>
+
+        <section class="section" id="contact">
+            <h2>Get in Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>adityakumar.mishra3566@gmail.com</p>
+                    <a href="mailto:adityakumar.mishra3566@gmail.com" class="btn">Send Email</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+91 8434978269</p>
+                    <a href="https://wa.me/8434978269" class="btn">WhatsApp</a>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/adityakrmishra" class="social-icon">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/aditya-kumarmishra" class="social-icon">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </section>
+
+        <div class="stats-container">
+            <img src="https://github-readme-stats.vercel.app/api?username=adityakrmishra&show_icons=true&theme=dark" 
+                 alt="GitHub Stats">
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=adityakrmishra&layout=compact&theme=dark" 
+                 alt="Language Stats">
+        </div>
+    </div>
+</body>
+</html>
