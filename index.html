@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2A2F4F;    /* Navy Blue */
-            --secondary: #F4B942;  /* Gold */
-            --accent: #03DAC6;     /* Cyan */
-            --dark: #121212;
+            --primary: #1A1A2E;    /* Deep Navy */
+            --secondary: #0F3460;  /* Dark Blue */
+            --accent: #4ECCA3;     /* Teal */
+            --highlight: #E94560;  /* Coral */
+            --text: #EEEEEE;
             --darker: #000000;
-            --text: #E0E0E0;
         }
 
         * {
@@ -31,14 +31,14 @@
         }
 
         nav {
-            background: rgba(18, 18, 18, 0.98);
+            background: rgba(26, 26, 46, 0.98);
             padding: 1.5rem 5%;
             position: fixed;
             width: 100%;
             top: 0;
             backdrop-filter: blur(12px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(78, 204, 163, 0.1);
         }
 
         nav a {
@@ -51,7 +51,7 @@
         }
 
         nav a:hover {
-            color: var(--secondary);
+            color: var(--accent);
         }
 
         nav a::after {
@@ -61,7 +61,7 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background: var(--secondary);
+            background: var(--accent);
             transition: width 0.3s;
         }
 
@@ -90,10 +90,10 @@
             width: 220px;
             height: 220px;
             border-radius: 50%;
-            border: 3px solid var(--secondary);
+            border: 3px solid var(--accent);
             margin: 2rem auto;
             transition: transform 0.3s;
-            box-shadow: 0 0 25px rgba(244, 185, 66, 0.2);
+            box-shadow: 0 0 25px rgba(78, 204, 163, 0.2);
         }
 
         .profile-pic:hover {
@@ -103,15 +103,9 @@
         .profile-section h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, var(--secondary), var(--accent));
+            background: linear-gradient(45deg, var(--accent), var(--highlight));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-
-        .profile-info p {
-            font-size: 1.1rem;
-            margin: 0.5rem 0;
-            color: #cccccc;
         }
 
         .section {
@@ -120,14 +114,14 @@
             margin: 3rem 0;
             border-radius: 15px;
             backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(78, 204, 163, 0.1);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .section h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
-            color: var(--secondary);
+            color: var(--accent);
             position: relative;
             padding-left: 1rem;
         }
@@ -140,8 +134,97 @@
             transform: translateY(-50%);
             height: 80%;
             width: 4px;
-            background: var(--secondary);
+            background: var(--accent);
         }
+
+        /* Enhanced Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: skillEntry 0.6s forwards;
+        }
+
+        @keyframes skillEntry {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .skill-item:nth-child(1) { animation-delay: 0.2s; }
+        .skill-item:nth-child(2) { animation-delay: 0.4s; }
+        .skill-item:nth-child(3) { animation-delay: 0.6s; }
+        .skill-item:nth-child(4) { animation-delay: 0.8s; }
+        .skill-item:nth-child(5) { animation-delay: 1.0s; }
+        .skill-item:nth-child(6) { animation-delay: 1.2s; }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            background: var(--secondary);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter-logo {
+            width: 120px;
+            margin-bottom: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .newsletter-btn {
+            background: linear-gradient(45deg, var(--accent), var(--highlight));
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s;
+            display: inline-block;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .newsletter-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .newsletter-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.2), 
+                transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -50%; }
+            100% { left: 150%; }
+        }
+
 
         .project-card {
             background: linear-gradient(145deg, var(--primary), rgba(42, 47, 79, 0.5));
@@ -295,10 +378,12 @@
     </style>
 </head>
 <body>
-    <nav>
+        <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#newsletter">Newsletter</a>
         <a href="#contact">Contact</a>
     </nav>
 
@@ -384,12 +469,35 @@
                     <h3>JavaScript</h3>
                 </div>
                 <div class="skill-item">
+                    <i class="fab fa-python fa-3x"></i>
+                    <h3>Python</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-java fa-3x"></i>
+                    <h3>Java</h3>
+                </div>
+                <div class="skill-item">
                     <i class="fas fa-video fa-3x"></i>
                     <h3>Video Editing</h3>
                 </div>
             </div>
         </section>
 
+
+         <section class="section" id="newsletter">
+            <div class="newsletter-section">
+                <img src="1.png" alt="NextGen Tech Logo" class="newsletter-logo">
+                <h2>NextGen Tech Newsletter</h2>
+                <p>Stay updated with the latest in technology and development</p>
+                <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7289563735638048768" 
+                   class="newsletter-btn" 
+                   target="_blank">
+                    Subscribe on LinkedIn
+                </a>
+            </div>
+        </section>
+
+        
         <section class="section" id="contact">
             <h2>Get in Touch</h2>
             <div class="contact-info">
