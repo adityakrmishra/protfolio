@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Modern Dark Theme */
         :root {
             --primary: #00ff88;
             --secondary: #03dac6;
@@ -29,7 +28,6 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
         nav {
             background: rgba(18, 18, 18, 0.95);
             padding: 1.5rem 5%;
@@ -69,14 +67,12 @@
             width: 100%;
         }
 
-        /* Main Container */
         .container {
             max-width: 1200px;
             margin: 100px auto 50px;
             padding: 0 20px;
         }
 
-        /* Profile Section */
         .profile-section {
             text-align: center;
             padding: 4rem 0;
@@ -109,7 +105,6 @@
             color: #cccccc;
         }
 
-        /* Sections */
         .section {
             background: rgba(255, 255, 255, 0.05);
             padding: 2.5rem;
@@ -125,7 +120,6 @@
             color: var(--primary);
         }
 
-        /* Projects */
         .project-card {
             background: var(--dark);
             padding: 2rem;
@@ -138,12 +132,11 @@
             transform: translateY(-5px);
         }
 
-        /* Buttons */
         .btn {
             display: inline-flex;
             align-items: center;
             padding: 12px 30px;
-            margin: 1rem 0;
+            margin: 1rem 10px 1rem 0;
             border-radius: 30px;
             font-weight: 600;
             text-decoration: none;
@@ -163,7 +156,6 @@
             transform: translateX(5px);
         }
 
-        /* Social Icons */
         .social-links {
             display: flex;
             justify-content: center;
@@ -182,7 +174,6 @@
             transform: translateY(-3px);
         }
 
-        /* Contact Section */
         .contact-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -203,7 +194,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Stats */
         .stats-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -263,17 +253,51 @@
         <section class="section" id="about">
             <h2>About Me</h2>
             <p>A passionate developer with expertise in video editing, web development, and digital marketing. Currently exploring machine learning and AI applications.</p>
-            <!-- Add more content -->
         </section>
 
         <section class="section" id="projects">
             <h2>Featured Projects</h2>
+
+            <!-- WeatherSphere -->
             <div class="project-card">
-                <h3>Daily Water Intake Tracker</h3>
-                <p>AI-powered hydration monitoring system</p>
-                <a href="#" class="btn">View on GitHub <i class="fab fa-github"></i></a>
+                <h3>WeatherSphere</h3>
+                <p>Your gateway to real-time global weather updates. Provides a simple and intuitive interface to check weather conditions in any city worldwide.</p>
+                <div>
+                    <a href="https://adityakrmishra.github.io/WeatherSphere/" class="btn" target="_blank" rel="noopener noreferrer">
+                        Live Demo <i class="fas fa-globe"></i>
+                    </a>
+                    <a href="https://github.com/adityakrmishra/WeatherSphere" class="btn" target="_blank" rel="noopener noreferrer">
+                        GitHub Repo <i class="fab fa-github"></i>
+                    </a>
+                </div>
             </div>
-            <!-- Add more projects -->
+
+            <!-- Library Management System -->
+            <div class="project-card">
+                <h3>Library Management System</h3>
+                <p>Web-based application for managing library operations including tracking books, users, and lending activities. Built with HTML, EJS, and JavaScript.</p>
+                <a href="https://github.com/adityakrmishra/library_managment_system" class="btn" target="_blank" rel="noopener noreferrer">
+                    GitHub Repo <i class="fab fa-github"></i>
+                </a>
+            </div>
+
+            <!-- Daily Water Intake Calculator -->
+            <div class="project-card">
+                <h3>Daily Water Intake Calculator</h3>
+                <p>Web application that calculates daily water requirements based on weight and exercise duration. Provides results in ounces and 16.9-ounce bottles.</p>
+                <a href="https://github.com/adityakrmishra/Daily_water_intake_calculator" class="btn" target="_blank" rel="noopener noreferrer">
+                    GitHub Repo <i class="fab fa-github"></i>
+                </a>
+            </div>
+
+            <!-- ML in Java -->
+            <div class="project-card">
+                <h3>ML in Java</h3>
+                <p>Collection of machine learning algorithms and utilities implemented in Java, including models, evaluation metrics, and cross-validation techniques.</p>
+                <a href="https://github.com/adityakrmishra/ml_in_java" class="btn" target="_blank" rel="noopener noreferrer">
+                    GitHub Repo <i class="fab fa-github"></i>
+                </a>
+            </div>
         </section>
 
         <section class="section" id="contact">
