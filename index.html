@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #1A1A2E;    /* Deep Navy */
-            --secondary: #0F3460;  /* Dark Blue */
-            --accent: #4ECCA3;     /* Teal */
-            --highlight: #E94560;  /* Coral */
+            --primary: #1A1A2E;
+            /* Deep Navy */
+            --secondary: #0F3460;
+            /* Dark Blue */
+            --accent: #4ECCA3;
+            /* Teal */
+            --highlight: #E94560;
+            /* Coral */
             --text: #EEEEEE;
             --darker: #000000;
         }
@@ -82,8 +87,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .profile-pic {
@@ -157,15 +169,35 @@
         }
 
         @keyframes skillEntry {
-            to { opacity: 1; transform: translateY(0); }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .skill-item:nth-child(1) { animation-delay: 0.2s; }
-        .skill-item:nth-child(2) { animation-delay: 0.4s; }
-        .skill-item:nth-child(3) { animation-delay: 0.6s; }
-        .skill-item:nth-child(4) { animation-delay: 0.8s; }
-        .skill-item:nth-child(5) { animation-delay: 1.0s; }
-        .skill-item:nth-child(6) { animation-delay: 1.2s; }
+        .skill-item:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .skill-item:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .skill-item:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .skill-item:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .skill-item:nth-child(5) {
+            animation-delay: 1.0s;
+        }
+
+        .skill-item:nth-child(6) {
+            animation-delay: 1.2s;
+        }
 
         /* Newsletter Section */
         .newsletter-section {
@@ -184,8 +216,15 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .newsletter-btn {
@@ -212,17 +251,109 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.2), 
-                transparent);
+            background: linear-gradient(45deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.2),
+                    transparent);
             transform: rotate(45deg);
             animation: shine 3s infinite;
         }
 
         @keyframes shine {
-            0% { left: -50%; }
-            100% { left: 150%; }
+            0% {
+                left: -50%;
+            }
+
+            100% {
+                left: 150%;
+            }
+        }
+
+
+
+        .services-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--darker) 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            margin: 3rem 0;
+            border: 1px solid rgba(78, 204, 163, 0.15);
+        }
+
+        .services-logo {
+            width: 180px;
+            margin-bottom: 1.5rem;
+            border-radius: 50%;
+            border: 3px solid var(--highlight);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .services-btn {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--highlight) 100%);
+            padding: 16px 45px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text);
+            text-decoration: none;
+            margin-top: 1.5rem;
+            border: none;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(233, 69, 96, 0.3);
+            transform: translateZ(0);
+        }
+
+        .services-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(120deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.15),
+                    transparent);
+            transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .services-btn:hover::before {
+            left: 100%;
+        }
+
+        .services-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(233, 69, 96, 0.4);
+        }
+
+        .services-btn:active {
+            transform: translateY(0) scale(0.98);
+            box-shadow: 0 6px 28px rgba(233, 69, 96, 0.3);
+        }
+
+        .services-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .services-btn:hover i {
+            transform: translateX(3px);
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) skew(-20deg);
+            }
+
+            100% {
+                transform: translateX(200%) skew(-20deg);
+            }
         }
 
 
@@ -264,12 +395,10 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(
-                120deg,
-                transparent,
-                rgba(255, 255, 255, 0.3),
-                transparent
-            );
+            background: linear-gradient(120deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.3),
+                    transparent);
             transition: 0.5s;
         }
 
@@ -361,29 +490,31 @@
             .container {
                 margin-top: 80px;
             }
-            
+
             nav a {
                 margin: 0 1rem;
                 font-size: 0.9rem;
             }
-            
+
             .profile-section h1 {
                 font-size: 2.5rem;
             }
-            
+
             .section {
                 padding: 1.5rem;
             }
         }
     </style>
 </head>
+
 <body>
-        <nav>
+    <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
         <a href="#newsletter">Newsletter</a>
+        <a href="#services">Services</a>
         <a href="#contact">Contact</a>
     </nav>
 
@@ -404,61 +535,73 @@
 
         <section class="section" id="about">
             <h2>About Me</h2>
-            <p>A passionate developer with expertise in video editing, web development, and digital marketing. Currently exploring machine learning and AI applications.</p>
+            <p>A passionate developer with expertise in video editing, web development, and digital marketing. Currently
+                exploring machine learning and AI applications.</p>
         </section>
         <section class="section" id="projects">
             <h2>Featured Projects</h2>
-             <!-- NextGenTech-AI -->
-    <div class="project-card">
-        <h3>NextGenTech-AI</h3>
-        <p>Modern AI assistant interface with sophisticated animations and professional styling, powered by DeepSeek's API.</p>
-        <div>
-            <a href="https://adityakrmishra.github.io/NextGenTech-AI/" class="btn" target="_blank" rel="noopener noreferrer">
-                Live Demo <i class="fas fa-globe"></i>
-            </a>
-            <a href="https://github.com/adityakrmishra/NextGenTech-AI" class="btn" target="_blank" rel="noopener noreferrer">
-                GitHub Repo <i class="fab fa-github"></i>
-            </a>
-        </div>
-    </div>
+            <!-- NextGenTech-AI -->
+            <div class="project-card">
+                <h3>NextGenTech-AI</h3>
+                <p>Modern AI assistant interface with sophisticated animations and professional styling, powered by
+                    DeepSeek's API.</p>
+                <div>
+                    <a href="https://adityakrmishra.github.io/NextGenTech-AI/" class="btn" target="_blank"
+                        rel="noopener noreferrer">
+                        Live Demo <i class="fas fa-globe"></i>
+                    </a>
+                    <a href="https://github.com/adityakrmishra/NextGenTech-AI" class="btn" target="_blank"
+                        rel="noopener noreferrer">
+                        GitHub Repo <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
 
-    <!-- Quantum_finance_pro -->
-    <div class="project-card">
-        <h3>Quantum Finance Pro</h3>
-        <p>Real-time stock market analytics platform with live data tracking and advanced financial visualization tools.</p>
-        <div>
-            <a href="https://adityakrmishra.github.io/Quantum_finance_pro/" class="btn" target="_blank" rel="noopener noreferrer">
-                Live Demo <i class="fas fa-globe"></i>
-            </a>
-            <a href="https://github.com/adityakrmishra/Quantum_finance_pro" class="btn" target="_blank" rel="noopener noreferrer">
-                GitHub Repo <i class="fab fa-github"></i>
-            </a>
-        </div>
-    </div>
+            <!-- Quantum_finance_pro -->
+            <div class="project-card">
+                <h3>Quantum Finance Pro</h3>
+                <p>Real-time stock market analytics platform with live data tracking and advanced financial
+                    visualization tools.</p>
+                <div>
+                    <a href="https://adityakrmishra.github.io/Quantum_finance_pro/" class="btn" target="_blank"
+                        rel="noopener noreferrer">
+                        Live Demo <i class="fas fa-globe"></i>
+                    </a>
+                    <a href="https://github.com/adityakrmishra/Quantum_finance_pro" class="btn" target="_blank"
+                        rel="noopener noreferrer">
+                        GitHub Repo <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
 
-    <!-- ViperVortex -->
-    <div class="project-card">
-        <h3>ViperVortex</h3>
-        <p>Immersive 3D Snake game experience with modern graphics rendering and responsive controls.</p>
-        <div>
-            <a href="https://adityakrmishra.github.io/ViperVortex/" class="btn" target="_blank" rel="noopener noreferrer">
-                Live Demo <i class="fas fa-globe"></i>
-            </a>
-            <a href="https://github.com/adityakrmishra/ViperVortex" class="btn" target="_blank" rel="noopener noreferrer">
-                GitHub Repo <i class="fab fa-github"></i>
-            </a>
-        </div>
-    </div>
+            <!-- ViperVortex -->
+            <div class="project-card">
+                <h3>ViperVortex</h3>
+                <p>Immersive 3D Snake game experience with modern graphics rendering and responsive controls.</p>
+                <div>
+                    <a href="https://adityakrmishra.github.io/ViperVortex/" class="btn" target="_blank"
+                        rel="noopener noreferrer">
+                        Live Demo <i class="fas fa-globe"></i>
+                    </a>
+                    <a href="https://github.com/adityakrmishra/ViperVortex" class="btn" target="_blank"
+                        rel="noopener noreferrer">
+                        GitHub Repo <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
 
             <!-- WeatherSphere -->
             <div class="project-card">
                 <h3>WeatherSphere</h3>
-                <p>Your gateway to real-time global weather updates. Provides a simple and intuitive interface to check weather conditions in any city worldwide.</p>
+                <p>Your gateway to real-time global weather updates. Provides a simple and intuitive interface to check
+                    weather conditions in any city worldwide.</p>
                 <div>
-                    <a href="https://adityakrmishra.github.io/WeatherSphere/" class="btn" target="_blank" rel="noopener noreferrer">
+                    <a href="https://adityakrmishra.github.io/WeatherSphere/" class="btn" target="_blank"
+                        rel="noopener noreferrer">
                         Live Demo <i class="fas fa-globe"></i>
                     </a>
-                    <a href="https://github.com/adityakrmishra/WeatherSphere" class="btn" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/adityakrmishra/WeatherSphere" class="btn" target="_blank"
+                        rel="noopener noreferrer">
                         GitHub Repo <i class="fab fa-github"></i>
                     </a>
                 </div>
@@ -467,8 +610,10 @@
             <!-- Library Management System -->
             <div class="project-card">
                 <h3>Library Management System</h3>
-                <p>Web-based application for managing library operations including tracking books, users, and lending activities. Built with HTML, EJS, and JavaScript.</p>
-                <a href="https://github.com/adityakrmishra/library_managment_system" class="btn" target="_blank" rel="noopener noreferrer">
+                <p>Web-based application for managing library operations including tracking books, users, and lending
+                    activities. Built with HTML, EJS, and JavaScript.</p>
+                <a href="https://github.com/adityakrmishra/library_managment_system" class="btn" target="_blank"
+                    rel="noopener noreferrer">
                     GitHub Repo <i class="fab fa-github"></i>
                 </a>
             </div>
@@ -476,8 +621,10 @@
             <!-- Daily Water Intake Calculator -->
             <div class="project-card">
                 <h3>Daily Water Intake Calculator</h3>
-                <p>Web application that calculates daily water requirements based on weight and exercise duration. Provides results in ounces and 16.9-ounce bottles.</p>
-                <a href="https://github.com/adityakrmishra/Daily_water_intake_calculator" class="btn" target="_blank" rel="noopener noreferrer">
+                <p>Web application that calculates daily water requirements based on weight and exercise duration.
+                    Provides results in ounces and 16.9-ounce bottles.</p>
+                <a href="https://github.com/adityakrmishra/Daily_water_intake_calculator" class="btn" target="_blank"
+                    rel="noopener noreferrer">
                     GitHub Repo <i class="fab fa-github"></i>
                 </a>
             </div>
@@ -485,8 +632,10 @@
             <!-- ML in Java -->
             <div class="project-card">
                 <h3>ML in Java</h3>
-                <p>Collection of machine learning algorithms and utilities implemented in Java, including models, evaluation metrics, and cross-validation techniques.</p>
-                <a href="https://github.com/adityakrmishra/ml_in_java" class="btn" target="_blank" rel="noopener noreferrer">
+                <p>Collection of machine learning algorithms and utilities implemented in Java, including models,
+                    evaluation metrics, and cross-validation techniques.</p>
+                <a href="https://github.com/adityakrmishra/ml_in_java" class="btn" target="_blank"
+                    rel="noopener noreferrer">
                     GitHub Repo <i class="fab fa-github"></i>
                 </a>
             </div>
@@ -524,20 +673,31 @@
         </section>
 
 
-         <section class="section" id="newsletter">
+        <section class="section" id="newsletter">
             <div class="newsletter-section">
                 <img src="1.png" alt="NextGen Tech Logo" class="newsletter-logo">
                 <h2>NextGen Tech Newsletter</h2>
                 <p>Stay updated with the latest in technology and development</p>
-                <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7289563735638048768" 
-                   class="newsletter-btn" 
-                   target="_blank">
+                <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7289563735638048768"
+                    class="newsletter-btn" target="_blank">
                     Subscribe on LinkedIn
                 </a>
             </div>
         </section>
 
-        
+        <section class="section" id="services">
+            <div class="services-section">
+                <img src="CJRCODER.JPG" alt="CJR Coder" class="services-logo">
+                <h2>CJRCODER</h2>
+                <p>Premium development agency for your digital solutions</p>
+                <a href="https://wa.me/8434978269" class="services-btn">
+                    <i class="fas fa-rocket"></i>
+                    Get Professional Services
+                </a>
+            </div>
+        </section>
+
+
         <section class="section" id="contact">
             <h2>Get in Touch</h2>
             <div class="contact-info">
@@ -563,11 +723,12 @@
         </section>
 
         <div class="stats-container">
-            <img src="https://github-readme-stats.vercel.app/api?username=adityakrmishra&show_icons=true&theme=dark" 
-                 alt="GitHub Stats">
-            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=adityakrmishra&layout=compact&theme=dark" 
-                 alt="Language Stats">
+            <img src="https://github-readme-stats.vercel.app/api?username=adityakrmishra&show_icons=true&theme=dark"
+                alt="GitHub Stats">
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=adityakrmishra&layout=compact&theme=dark"
+                alt="Language Stats">
         </div>
     </div>
 </body>
+
 </html>
